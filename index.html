@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProjetsHabitat — Rénovation & Construction tous corps d'état à Agen (47)</title>
+<meta name="description" content="ProjetsHabitat, entreprise du bâtiment tous corps d'état à Agen (47) : maçonnerie, plâtrerie, isolation, électricité, plomberie, peinture. Garantie décennale, devis gratuit. 5,0/5 sur 21 avis Google.">
+<meta name="theme-color" content="#2A2318">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "ProjetsHabitat Rénovation Construction",
+  "telephone": "+33625859668",
+  "email": "projethabitat47@hotmail.com",
+  "url": "https://www.projetshabitat.fr/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "32 Rue Grenouilla",
+    "postalCode": "47000",
+    "addressLocality": "Agen",
+    "addressCountry": "FR"
+  },
+  "openingHours": ["Mo-Fr 10:00-12:00", "Mo-Fr 14:00-18:00"],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "21" }
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap');
+
+/* ============ TOKENS ============ */
+:root {
+  --pierre: #2A2318;
+  --soleil: #F5EFE4;
+  --ocre:   #C4834A;
+  --sable:  #E8DCC8;
+  --brume:  #8C7B68;
+  --ciel:   #3A5A7A;
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  --bandeau-h: 36px;
+  --header-h: 76px;
+  --radius: 4px;
+  --radius-sm: 3px;
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+
+  /* Appareillage de briques — tuile 32×16, rangées décalées d'une demi-brique.
+     (valeur littérale de --ocre dans le data-URI : les variables CSS n'y sont pas résolues) */
+  --briques: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Cg fill='none' stroke='%23C4834A' stroke-opacity='0.05' stroke-width='0.5'%3E%3Crect x='2' y='1' width='28' height='6'/%3E%3Crect x='-14' y='9' width='28' height='6'/%3E%3Crect x='18' y='9' width='28' height='6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ============ BASE ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--bandeau-h) + var(--header-h)); -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--pierre);
+  background: var(--soleil);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ocre); outline-offset: 3px; }
+
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: clamp(72px, 10vw, 120px) 0; position: relative; }
+.bg-pierre { background-color: var(--pierre); background-image: var(--briques); background-size: 32px 16px; color: var(--soleil); }
+.bg-soleil { background: var(--soleil); }
+.bg-sable  { background: var(--sable); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ocre);
+  display: block;
+  margin-bottom: 16px;
+}
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 4.6vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--pierre);
+}
+.bg-pierre .h2 { color: var(--soleil); }
+.lead { color: var(--brume); line-height: 1.75; margin-top: 18px; max-width: 520px; }
+.section-head { margin-bottom: clamp(40px, 6vw, 64px); }
+.section-head.center { text-align: center; }
+.section-head.center .lead { margin-left: auto; margin-right: auto; }
+
+/* ============ BOUTONS ============ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-body); font-weight: 700; font-size: 15px;
+  padding: 15px 26px; border-radius: var(--radius-sm);
+  border: 1px solid transparent; cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-ocre { background: var(--ocre); color: var(--soleil); }
+.btn-ocre:hover { background: var(--soleil); color: var(--pierre); }
+.btn-ghost { background: transparent; color: var(--soleil); border-color: color-mix(in srgb, var(--soleil) 50%, transparent); }
+.btn-ghost:hover { border-color: var(--ocre); color: var(--ocre); }
+.btn-outline-dark { background: transparent; color: var(--pierre); border-color: var(--pierre); }
+.btn-outline-dark:hover { background: var(--pierre); color: var(--soleil); }
+
+/* ============ 0. BANDEAU ============ */
+.bandeau {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+  height: var(--bandeau-h);
+  background: var(--ocre); color: var(--soleil);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 0 16px; white-space: nowrap; overflow: hidden;
+}
+.bandeau a { border-bottom: 1px solid color-mix(in srgb, var(--soleil) 50%, transparent); }
+.bandeau a:hover { border-color: var(--soleil); }
+.bandeau .sep { opacity: .65; margin: 0 .55em; }
+
+/* ============ 1. HEADER ============ */
+.header {
+  position: fixed; top: var(--bandeau-h); left: 0; right: 0; z-index: 100;
+  height: var(--header-h);
+  background: transparent;
+  transition: background-color .3s ease, box-shadow .3s ease, height .3s ease;
+}
+.header.scrolled {
+  background: color-mix(in srgb, var(--pierre) 97%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--ocre) 25%, transparent);
+}
+.header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+.logo { display: flex; flex-direction: column; line-height: 1; }
+.logo-word { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; }
+.logo-word .p { font-weight: 700; color: var(--soleil); }
+.logo-word .h { font-weight: 800; color: var(--ocre); }
+.logo-sub { font-size: 10px; font-weight: 400; color: var(--brume); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+
+.nav { display: flex; align-items: center; gap: 34px; }
+.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links a {
+  font-size: 15px; font-weight: 500; color: var(--soleil);
+  position: relative; padding: 6px 0; transition: color .2s ease;
+}
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: var(--ocre); transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--ocre); }
+.nav-links a.active::after { transform: scaleX(1); }
+.header .btn { padding: 11px 20px; font-size: 14px; }
+
+.burger {
+  display: none; width: 44px; height: 44px; background: none; border: 0; cursor: pointer;
+  position: relative;
+}
+.burger span {
+  position: absolute; left: 11px; right: 11px; height: 2px; background: var(--soleil);
+  transition: transform .3s ease, opacity .2s ease;
+}
+.burger span:nth-child(1) { top: 15px; }
+.burger span:nth-child(2) { top: 21px; }
+.burger span:nth-child(3) { top: 27px; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ============ 2. HERO ============ */
+.hero {
+  min-height: 100vh; min-height: 100svh;
+  padding: calc(var(--bandeau-h) + var(--header-h) + clamp(48px, 8vw, 96px)) 0 clamp(64px, 8vw, 96px);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  /* halo ocre chaud — soleil du Sud-Ouest */
+  content: ""; position: absolute; pointer-events: none;
+  width: 720px; height: 720px; right: -220px; top: 10%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--ocre) 18%, transparent) 0%, transparent 65%);
+}
+.hero .container { position: relative; z-index: 1; }
+.hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+
+.hero h1 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(46px, 7.4vw, 80px); line-height: 1.0; letter-spacing: -0.025em;
+  color: var(--soleil);
+}
+.hero h1 .l2 { display: block; color: var(--ocre); }
+.hero-sub { color: var(--brume); max-width: 480px; line-height: 1.75; margin-top: 26px; font-size: 17px; }
+
+.google-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 30px; padding: 12px 20px; border-radius: 6px;
+  background: color-mix(in srgb, var(--ocre) 15%, transparent);
+  border: 1px solid var(--ocre);
+  color: var(--soleil); font-weight: 700; font-size: 14px;
+  transition: background-color .25s ease;
+}
+.google-badge:hover { background: color-mix(in srgb, var(--ocre) 25%, transparent); }
+.google-badge .muted { font-weight: 500; color: color-mix(in srgb, var(--soleil) 75%, transparent); }
+
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+.reassurance {
+  margin-top: 36px; padding: 13px 18px; border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--brume) 20%, transparent);
+  color: var(--sable); font-size: 14px; font-weight: 500;
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+}
+
+.hero-aside { display: flex; flex-direction: column; gap: 14px; }
+.hero-card {
+  display: flex; align-items: center; gap: 18px;
+  padding: 22px 24px; border-radius: var(--radius);
+  background: var(--pierre);
+  border: 1px solid color-mix(in srgb, var(--ocre) 30%, transparent);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.hero-card:hover { border-color: var(--ocre); transform: translateX(4px); }
+.hero-card .ico {
+  flex: none; width: 48px; height: 48px; border-radius: var(--radius-sm);
+  display: grid; place-items: center; font-size: 22px;
+  background: color-mix(in srgb, var(--ocre) 12%, transparent);
+}
+.hero-card strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--soleil); }
+.hero-card span { font-size: 14px; color: var(--brume); }
+
+/* ============ 3. SERVICES ============ */
+.services-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+.service {
+  grid-column: span 2;
+  background: var(--sable);
+  border-top: 3px solid var(--ocre);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 1px 2px rgba(42, 35, 24, .06), 0 12px 32px -16px rgba(42, 35, 24, .22);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.service:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(42, 35, 24, .08), 0 22px 44px -18px rgba(42, 35, 24, .32); }
+.service:nth-child(4) { grid-column: 2 / 4; }
+.service:nth-child(5) { grid-column: 4 / 6; }
+.service-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.service .emoji { font-size: 30px; line-height: 1; }
+.service .num { font-family: var(--font-display); font-weight: 800; font-size: 14px; color: var(--brume); letter-spacing: .04em; }
+.service h3 { font-family: var(--font-display); font-weight: 700; font-size: 23px; line-height: 1.15; margin-bottom: 12px; color: var(--pierre); }
+.service p { color: color-mix(in srgb, var(--pierre) 78%, var(--brume)); font-size: 15px; line-height: 1.7; }
+
+/* ============ 4. POURQUOI ============ */
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.why {
+  background: var(--pierre);
+  border: 1px solid color-mix(in srgb, var(--ocre) 30%, transparent);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: border-color .25s ease;
+}
+.why:hover { border-color: var(--ocre); }
+.why .emoji { font-size: 26px; display: block; margin-bottom: 16px; }
+.why h3 { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--soleil); margin-bottom: 8px; }
+.why p { color: var(--brume); font-size: 15px; line-height: 1.65; }
+.why-text { color: var(--brume); max-width: 560px; margin: 22px auto 0; line-height: 1.8; }
+
+/* ============ RÉALISATIONS (placeholders) ============ */
+.gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 16px; }
+.slot {
+  border-radius: var(--radius);
+  border: 1.5px dashed color-mix(in srgb, var(--brume) 55%, transparent);
+  background: var(--sable);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  color: var(--brume); font-size: 13px; text-align: center; padding: 16px;
+  overflow: hidden;
+}
+.slot img { width: 100%; height: 100%; object-fit: cover; }
+.slot:has(img) { padding: 0; border: 0; }
+.slot .ico { font-size: 26px; opacity: .8; }
+.slot strong { color: var(--pierre); font-family: var(--font-display); font-weight: 700; font-size: 15px; }
+.slot.big { grid-row: span 2; }
+.gallery-note { margin-top: 22px; color: var(--brume); font-size: 14px; text-align: center; }
+
+/* ============ 5. AVIS ============ */
+.rating-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--ocre); color: var(--soleil);
+  font-weight: 700; border-radius: var(--radius);
+  padding: 10px 24px; margin-top: 26px;
+}
+.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.review {
+  background: var(--soleil);
+  border-left: 3px solid var(--ocre);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex; flex-direction: column;
+}
+.review .stars { letter-spacing: 2px; font-size: 15px; }
+.review blockquote { margin: 16px 0 20px; font-size: 16px; line-height: 1.7; color: var(--pierre); flex: 1; }
+.review cite { font-style: normal; font-size: 14px; font-weight: 500; color: var(--brume); }
+.reviews-cta { text-align: center; margin-top: 44px; }
+
+/* ============ 6. CONTACT ============ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 28px; align-items: start; }
+.contact-card {
+  background-color: var(--pierre); background-image: var(--briques); background-size: 32px 16px;
+  color: var(--soleil); border-radius: var(--radius); padding: 36px;
+}
+.contact-card .phone {
+  display: inline-block; font-family: var(--font-display); font-weight: 700;
+  font-size: 24px; color: var(--ocre); transition: color .2s ease;
+}
+.contact-card .phone:hover { color: var(--soleil); }
+.contact-list { list-style: none; margin-top: 24px; display: grid; gap: 14px; }
+.contact-list a:hover { color: var(--ocre); }
+.contact-list .hours { color: var(--brume); font-size: 13px; }
+.contact-card hr { border: 0; height: 1px; background: color-mix(in srgb, var(--brume) 30%, transparent); margin: 26px 0 20px; }
+.contact-card .note { font-style: italic; color: var(--brume); font-size: 13px; }
+.contact-card .mini-rating { margin-top: 18px; display: inline-flex; gap: 8px; font-size: 13px; font-weight: 700; color: var(--sable); }
+
+.form {
+  background: var(--sable); border-radius: var(--radius); padding: clamp(24px, 4vw, 36px);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px;
+}
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--pierre); }
+.field label .req { color: var(--ocre); }
+.field input, .field select, .field textarea {
+  width: 100%; background: var(--soleil);
+  border: 1px solid var(--brume); border-radius: var(--radius-sm);
+  padding: 12px 14px; font-size: 15px; color: var(--pierre);
+  transition: border-color .2s ease, box-shadow .2s ease;
+  -webkit-appearance: none; appearance: none;
+}
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238C7B68' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px;
+}
+.field textarea { min-height: 130px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--ocre);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ocre) 18%, transparent);
+}
+.form-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-top: 6px; }
+.form-foot small { color: var(--brume); font-size: 13px; }
+.btn-submit { background: var(--ocre); color: var(--soleil); }
+.btn-submit:hover { background: var(--pierre); color: var(--soleil); }
+.form-status { grid-column: 1 / -1; font-size: 14px; font-weight: 500; color: var(--ciel); min-height: 1em; }
+
+/* ============ 7. FOOTER ============ */
+.footer {
+  background-color: var(--pierre); background-image: var(--briques); background-size: 32px 16px;
+  border-top: 3px solid var(--ocre);
+  color: var(--sable); padding: 56px 0 32px; font-size: 14px;
+}
+.footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; align-items: flex-start; }
+.footer .logo-word { font-size: 18px; }
+.footer .logo-sub { font-size: 11px; margin-top: 8px; }
+.footer-info { display: grid; gap: 8px; text-align: right; }
+.footer-info a:hover { color: var(--ocre); }
+.footer-rating { color: var(--ocre); font-weight: 700; }
+.footer-bottom {
+  margin-top: 36px; padding-top: 22px;
+  border-top: 1px solid color-mix(in srgb, var(--brume) 25%, transparent);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;
+  color: var(--brume); font-size: 13px;
+}
+
+/* ============ REVEAL ============ */
+.reveal { opacity: 0; transform: translateY(10px); transition: opacity .4s ease-out, transform .4s ease-out; transition-delay: calc(var(--i, 0) * 0.06s); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1280px) {
+  .nav-links { gap: 24px; }
+}
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-aside { flex-direction: row; flex-wrap: wrap; }
+  .hero-card { flex: 1 1 220px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .bandeau .opt-lg { display: none; }
+}
+@media (max-width: 900px) {
+  :root { --header-h: 68px; }
+  .burger { display: block; }
+  .nav {
+    position: fixed; top: calc(var(--bandeau-h) + var(--header-h)); left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--pierre); padding: 8px var(--gutter) 24px;
+    border-bottom: 3px solid var(--ocre);
+    transform: translateY(-8px); opacity: 0; visibility: hidden;
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  }
+  .nav.open { transform: none; opacity: 1; visibility: visible; }
+  .nav-links { flex-direction: column; gap: 0; }
+  .nav-links a { display: block; padding: 16px 0; font-size: 17px; border-bottom: 1px solid color-mix(in srgb, var(--brume) 25%, transparent); }
+  .nav-links a::after { display: none; }
+  .nav .btn { margin-top: 20px; }
+}
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service, .service:nth-child(4) { grid-column: span 1; }
+  .service:nth-child(5) { grid-column: 1 / -1; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 160px 160px; }
+  .slot.big { grid-column: 1 / -1; grid-row: auto; }
+  .reviews {
+    display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 16px; padding-bottom: 12px;
+    margin: 0 calc(var(--gutter) * -1); padding-left: var(--gutter); padding-right: var(--gutter);
+    scroll-padding: 0 var(--gutter);
+    scrollbar-width: thin; scrollbar-color: var(--ocre) transparent;
+  }
+  .review { flex: 0 0 84%; scroll-snap-align: start; }
+  .footer-info { text-align: left; }
+  .bandeau .opt-md { display: none; }
+}
+@media (max-width: 480px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .service:nth-child(n) { grid-column: 1 / -1; }
+  .why-grid { grid-template-columns: 1fr; }
+  .form { grid-template-columns: 1fr; }
+  .hero-ctas .btn { flex: 1 1 100%; }
+  .gallery { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 180px; }
+  .bandeau { font-size: 11px; letter-spacing: .06em; }
+  .logo-sub { font-size: 9px; }
+  .contact-card { padding: 28px 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; transition-delay: 0s !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- 0. BANDEAU -->
+<div class="bandeau" role="note">
+  <span>⭐ 5,0/5<span class="sep">·</span>21 avis Google</span>
+  <span class="opt-lg"><span class="sep">·</span>ProjetsHabitat</span>
+  <span class="opt-md"><span class="sep">·</span>Tous corps d'état<span class="sep">·</span>Agen (47)</span>
+  <span class="sep">·</span><a href="tel:0625859668">06 25 85 96 68</a>
+</div>
+
+<!-- 1. HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#accueil" class="logo" aria-label="ProjetsHabitat — accueil">
+      <span class="logo-word"><span class="p">Projets</span><span class="h">Habitat</span></span>
+      <span class="logo-sub">Rénovation · Construction · Agen (47)</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-ocre">Devis gratuit</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- 2. HERO -->
+<section class="hero bg-pierre" id="accueil">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow reveal">Entreprise du bâtiment · Tous corps d'état · Agen (47)</span>
+      <h1 class="reveal">Un seul artisan.<span class="l2">Tous vos travaux.</span></h1>
+      <p class="hero-sub reveal">ProjetsHabitat prend en charge l'ensemble de votre chantier à Agen : maçonnerie, électricité, plomberie et peinture. Un seul interlocuteur, du devis à la livraison, avec garantie décennale.</p>
+
+      <a class="google-badge reveal" href="https://www.google.com/maps?cid=9016517569842531909" target="_blank" rel="noopener">
+        ⭐ 5,0/5 · 21 avis Google <span class="muted">— Avis clients vérifiés</span>
+      </a>
+
+      <div class="hero-ctas reveal">
+        <a href="tel:0625859668" class="btn btn-ocre">📞 06 25 85 96 68</a>
+        <a href="#contact" class="btn btn-ghost">✉️ Demander un devis</a>
+      </div>
+
+      <div class="reassurance reveal">
+        <span>🧱 Maçonnerie</span><span>⚡ Électricité</span><span>🔧 Plomberie</span><span>🎨 Peinture</span><span>✅ Devis gratuit</span>
+      </div>
+    </div>
+
+    <div class="hero-aside">
+      <div class="hero-card reveal">
+        <span class="ico">🏗️</span>
+        <div><strong>Neuf & Rénovation</strong><span>Construction, extension, réhabilitation</span></div>
+      </div>
+      <div class="hero-card reveal">
+        <span class="ico">🛡️</span>
+        <div><strong>Garantie décennale</strong><span>Vos travaux couverts 10 ans</span></div>
+      </div>
+      <div class="hero-card reveal">
+        <span class="ico">🤝</span>
+        <div><strong>Interlocuteur unique</strong><span>Du devis à la remise des clés</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SERVICES -->
+<section class="section bg-soleil" id="services">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Nos services</span>
+      <h2 class="h2 reveal">Tous vos corps d'état.</h2>
+      <p class="lead reveal">Construction, rénovation, extension — ProjetsHabitat coordonne l'ensemble de votre chantier, du gros œuvre aux finitions.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service reveal">
+        <div class="service-top"><span class="emoji">🧱</span><span class="num">01</span></div>
+        <h3>Maçonnerie</h3>
+        <p>Construction neuve, rénovation et extension de maison. Murs porteurs, fondations, ravalement, dallage. Prise en charge des démarches administratives (permis de construire, déclarations).</p>
+      </article>
+      <article class="service reveal">
+        <div class="service-top"><span class="emoji">🏠</span><span class="num">02</span></div>
+        <h3>Plâtrerie & Isolation</h3>
+        <p>Cloisons, doublages, plafonds suspendus et faux plafonds. Isolation thermique et acoustique intérieure. Finitions soignées pour un résultat impeccable.</p>
+      </article>
+      <article class="service reveal">
+        <div class="service-top"><span class="emoji">⚡</span><span class="num">03</span></div>
+        <h3>Électricité</h3>
+        <p>Installation et mise aux normes électriques, tableau de distribution, prises, éclairage. Interventions en neuf comme en rénovation, en conformité NF C 15-100.</p>
+      </article>
+      <article class="service reveal">
+        <div class="service-top"><span class="emoji">🔧</span><span class="num">04</span></div>
+        <h3>Plomberie</h3>
+        <p>Salle de bain, cuisine, canalisations, chauffe-eau. Dépannage, installation et remplacement d'équipements sanitaires. Interventions propres et soignées.</p>
+      </article>
+      <article class="service reveal">
+        <div class="service-top"><span class="emoji">🎨</span><span class="num">05</span></div>
+        <h3>Peinture</h3>
+        <p>Peinture intérieure et extérieure, préparation des supports, enduits. Finitions nettes et durables adaptées à chaque surface et à chaque ambiance.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. POURQUOI PROJETSHABITAT -->
+<section class="section bg-pierre" id="pourquoi">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Pourquoi ProjetsHabitat</span>
+      <h2 class="h2 reveal">5 étoiles. 21 clients satisfaits. Zéro hasard.</h2>
+      <p class="why-text reveal">La note Google parle d'elle-même. Chez ProjetsHabitat, chaque chantier est traité avec la même rigueur : matériaux sélectionnés, délais tenus, finitions soignées. Artisan expérimenté, polyvalent et à l'écoute — pas de sous-traitance surprise, pas de mauvaise surprise.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><span class="emoji">⭐</span><h3>5,0/5 Google</h3><p>21 avis vérifiés. La satisfaction client, au cœur de tout.</p></div>
+      <div class="why reveal"><span class="emoji">🛡️</span><h3>Garantie décennale</h3><p>Vos travaux couverts 10 ans. Travaillez serein.</p></div>
+      <div class="why reveal"><span class="emoji">💬</span><h3>Interlocuteur unique</h3><p>Un seul contact du devis à la remise des clés.</p></div>
+      <div class="why reveal"><span class="emoji">📋</span><h3>Prix transparents</h3><p>Devis détaillé gratuit, sans frais cachés ni surprise.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS — emplacements prêts pour les photos de chantier.
+     Pour ajouter une photo : remplacer le contenu d'un .slot par
+     <img src="photos/chantier-1.jpg" alt="Description du chantier" loading="lazy"> -->
+<section class="section bg-soleil" id="realisations">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Réalisations</span>
+      <h2 class="h2 reveal">Nos chantiers à Agen.</h2>
+      <p class="lead reveal">Maisons neuves, extensions, rénovations complètes : un aperçu de nos chantiers dans le Lot-et-Garonne.</p>
+    </div>
+    <div class="gallery">
+      <div class="slot big reveal"><span class="ico">🏗️</span><strong>Construction & extension</strong><span>Photo à venir</span></div>
+      <div class="slot reveal"><span class="ico">🛁</span><strong>Salle de bain</strong><span>Photo à venir</span></div>
+      <div class="slot reveal"><span class="ico">🧱</span><strong>Maçonnerie</strong><span>Photo à venir</span></div>
+      <div class="slot reveal"><span class="ico">🎨</span><strong>Peinture</strong><span>Photo à venir</span></div>
+      <div class="slot reveal"><span class="ico">🏠</span><strong>Rénovation</strong><span>Photo à venir</span></div>
+    </div>
+    <p class="gallery-note reveal">Vous souhaitez voir un chantier similaire au vôtre ? <a href="tel:0625859668" style="color:var(--ciel);font-weight:700">Appelez-nous</a>.</p>
+  </div>
+</section>
+
+<!-- 5. AVIS CLIENTS — remplacer par de vrais extraits d'avis Google -->
+<section class="section bg-sable" id="avis">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal">Avis clients</span>
+      <h2 class="h2 reveal">Ce que disent nos clients.</h2>
+      <div class="rating-badge reveal">⭐⭐⭐⭐⭐ Note moyenne : 5,0/5 · 21 avis Google</div>
+    </div>
+
+    <div class="reviews">
+      <figure class="review reveal">
+        <div class="stars" aria-label="5 étoiles sur 5">⭐⭐⭐⭐⭐</div>
+        <blockquote>« Travaux de rénovation réalisés dans les délais, proprement et au prix convenu. Équipe sérieuse et à l'écoute. Je recommande sans hésiter. »</blockquote>
+        <cite>— Client Google, Agen</cite>
+      </figure>
+      <figure class="review reveal">
+        <div class="stars" aria-label="5 étoiles sur 5">⭐⭐⭐⭐⭐</div>
+        <blockquote>« Chantier complet cuisine et salle de bain — maçonnerie, plomberie, peinture. Un seul interlocuteur pour tout : pratique et efficace. »</blockquote>
+        <cite>— Client Google, Lot-et-Garonne</cite>
+      </figure>
+      <figure class="review reveal">
+        <div class="stars" aria-label="5 étoiles sur 5">⭐⭐⭐⭐⭐</div>
+        <blockquote>« Rapport qualité/prix excellent, finitions soignées et équipe professionnelle. On les a déjà recommandés à des voisins. »</blockquote>
+        <cite>— Client Google, Agen</cite>
+      </figure>
+    </div>
+
+    <div class="reviews-cta reveal">
+      <a href="https://www.google.com/maps?cid=9016517569842531909" target="_blank" rel="noopener" class="btn btn-outline-dark">Voir tous les avis sur Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CONTACT -->
+<section class="section bg-soleil" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Contact</span>
+      <h2 class="h2 reveal">Parlons de votre projet.</h2>
+    </div>
+
+    <div class="contact-grid">
+      <aside class="contact-card reveal">
+        <a href="tel:0625859668" class="phone">📞 06 25 85 96 68</a>
+        <ul class="contact-list">
+          <li><a href="mailto:projethabitat47@hotmail.com">✉️ projethabitat47@hotmail.com</a></li>
+          <li>📍 32 Rue Grenouilla, 47000 Agen</li>
+          <li class="hours">🕐 Lun–Ven : 10h–12h / 14h–18h</li>
+        </ul>
+        <hr>
+        <p class="note">Devis gratuit — réponse sous 48h.</p>
+        <span class="mini-rating">⭐ 5,0/5 · 21 avis Google</span>
+      </aside>
+
+      <!-- Formulaire : à brancher sur Web3Forms ou Formspree (action="…").
+           En attendant, l'envoi ouvre la messagerie avec la demande pré-remplie. -->
+      <form class="form reveal" id="devis-form" novalidate>
+        <div class="field">
+          <label for="prenom">Prénom <span class="req">*</span></label>
+          <input id="prenom" name="prenom" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="nom">Nom <span class="req">*</span></label>
+          <input id="nom" name="nom" type="text" autocomplete="family-name" required>
+        </div>
+        <div class="field">
+          <label for="tel">Téléphone <span class="req">*</span></label>
+          <input id="tel" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field full">
+          <label for="travaux">Type de travaux <span class="req">*</span></label>
+          <select id="travaux" name="travaux" required>
+            <option value="" disabled selected>Sélectionnez…</option>
+            <option>Maçonnerie & Construction</option>
+            <option>Extension de maison</option>
+            <option>Rénovation complète</option>
+            <option>Plâtrerie & Isolation</option>
+            <option>Électricité</option>
+            <option>Plomberie</option>
+            <option>Peinture</option>
+            <option>Plusieurs corps d'état</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="adresse">Adresse du chantier</label>
+          <input id="adresse" name="adresse" type="text" autocomplete="street-address" placeholder="Ex. : Agen, Boé, Le Passage…">
+        </div>
+        <div class="field full">
+          <label for="message">Description du projet</label>
+          <textarea id="message" name="message" placeholder="Décrivez vos travaux : surface, délais souhaités, contraintes…"></textarea>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <div class="form-foot">
+          <small>* Champs obligatoires · Devis gratuit et sans engagement</small>
+          <button type="submit" class="btn btn-submit">Envoyer ma demande</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 7. FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="logo-word"><span class="p">Projets</span><span class="h">Habitat</span></div>
+        <div class="logo-sub">Rénovation · Construction · Tous Corps d'État · Agen (47)</div>
+      </div>
+      <div class="footer-info">
+        <span><a href="tel:0625859668">📞 06 25 85 96 68</a> · <a href="mailto:projethabitat47@hotmail.com">✉️ projethabitat47@hotmail.com</a></span>
+        <span>📍 32 Rue Grenouilla, 47000 Agen · Lun–Ven 10h–12h / 14h–18h</span>
+        <a class="footer-rating" href="https://www.google.com/maps?cid=9016517569842531909" target="_blank" rel="noopener">⭐ 5,0/5 · 21 avis Google</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ProjetsHabitat — Tous droits réservés</span>
+      <span>Site réalisé par Payment Flow</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var header = document.getElementById('header');
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burger');
+
+  /* Header : transparent → pierre 97% + blur au scroll */
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 24); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Menu mobile */
+  function closeMenu() {
+    nav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Ouvrir le menu');
+    header.classList.toggle('scrolled', window.scrollY > 24);
+  }
+  burger.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    if (open) header.classList.add('scrolled');
+    else closeMenu();
+  });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+
+  /* Scroll reveal avec stagger (0.06s par élément frère) */
+  var reveals = document.querySelectorAll('.reveal');
+  var groups = new Map();
+  reveals.forEach(function (el) {
+    var parent = el.parentElement;
+    var i = groups.get(parent) || 0;
+    el.style.setProperty('--i', i);
+    groups.set(parent, i + 1);
+  });
+
+  if ('IntersectionObserver' in window) {
+    var revealObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { revealObs.observe(el); });
+
+    /* Scrollspy */
+    var links = document.querySelectorAll('.nav-links a');
+    var sections = Array.prototype.map.call(links, function (a) {
+      return document.querySelector(a.getAttribute('href'));
+    }).filter(Boolean);
+
+    var spyObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = '#' + entry.target.id;
+        links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === id); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { spyObs.observe(s); });
+
+    /* Retire l'état actif quand on remonte dans le hero */
+    var heroObs = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) links.forEach(function (a) { a.classList.remove('active'); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    heroObs.observe(document.getElementById('accueil'));
+  } else {
+    reveals.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* Formulaire de devis */
+  var form = document.getElementById('devis-form');
+  var status = document.getElementById('form-status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var invalid = Array.prototype.filter.call(form.querySelectorAll('[required]'), function (f) {
+      return !f.value.trim();
+    });
+    var email = form.elements.email;
+    if (email.value && !email.checkValidity()) invalid.push(email);
+
+    if (invalid.length) {
+      status.style.color = 'var(--ocre)';
+      status.textContent = 'Merci de compléter les champs obligatoires.';
+      invalid[0].focus();
+      return;
+    }
+
+    var d = form.elements;
+    var body = [
+      'Nom : ' + d.prenom.value + ' ' + d.nom.value,
+      'Téléphone : ' + d.telephone.value,
+      'Email : ' + (d.email.value || '—'),
+      'Type de travaux : ' + d.travaux.value,
+      'Adresse du chantier : ' + (d.adresse.value || '—'),
+      '',
+      'Projet :',
+      d.message.value || '—'
+    ].join('\n');
+
+    var subject = 'Demande de devis — ' + d.travaux.value;
+    window.location.href = 'mailto:projethabitat47@hotmail.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+    status.style.color = 'var(--ciel)';
+    status.textContent = 'Merci ! Votre messagerie s\'ouvre pour envoyer la demande. Vous pouvez aussi nous appeler au 06 25 85 96 68.';
+  });
+})();
+</script>
+</body>
+</html>
